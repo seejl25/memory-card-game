@@ -1,0 +1,111 @@
+body {
+  margin-left: 15px;
+  background-image: radial-gradient(circle, #50b8e7, #84cdee, #b9e2f5, #dcf0fa, #edf7fc);
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.instruction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #91c8e4;
+  color: black;
+  height: 300px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px black;
+  cursor: pointer;
+}
+
+.image-card img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.image-card p {
+  margin: 5px 0 0 0;
+  font-weight: bold;
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 37%;
+  background-color: #ff5252;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.game-over p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.game-over button {
+  color: black;
+  background-color: #91c8e4;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.game-won {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 37%;
+  background-color: #ede8d0;
+  padding: 1.2rem;
+  border-radius: 12px;
+  animation: bounce 2s infinite alternate;
+}
+
+.game-won button {
+  color: black;
+  background-color: #91c8e4;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+

@@ -1,0 +1,32 @@
+1. using useEffect to retrieve data from API
+    - useEffect(() => {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => setUserData(data.message))
+    }, [url])
+
+2. formatting of returned values
+    - {userData && (
+        <>
+            <img src={userData} />
+            <p>{userData?.split("/").at(-2).toUpperCase()}</p>
+        </>
+    )}
+    - Did not put both <img> and <p> inside the bracket initially which led to errors
+
+3. Ensuring same onClick events work even if on different JSX files.
+    - in App.JSX, const handleScoreClick = (breed) => {
+                    setSelected(prev => [...prev, breed])}
+    - in Card.JSX, const handleClick = () => {
+                    const breed = userData?.split("/").at(-2)
+                    if (breed) {
+                        onClick(breed)
+                    }
+                }
+        - in Card.JSX, the onClick refers to handleScoreClick, where handleScoreClick is passed into Card component as an input
+
+4. Using useStates for different purposes, such as tracking selected pictures, scores etc
+
+5. random shuffling using Fisher–Yates shuffle
+    - loop over each index in the array, and for each index, choose another random index (inclusive of the each index of each loop), and swap the elements for both 
+    position index
